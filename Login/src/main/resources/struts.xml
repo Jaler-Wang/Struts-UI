@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.multipart.maxSize" value="31457280" />
+    <!-- 二、总配置文件：引入其他所有配置文件 -->
+    <package name="entity" namespace="/" extends="struts-default">
+        <interceptors>
+            <interceptor name="loginCheck" class="utils.LoginCheck"/>
+            <interceptor-stack name="myInterceptor">
+                <interceptor-ref name="loginCheck"/>
+                <interceptor-ref name="defaultStack"/>
+            </interceptor-stack>
+        </interceptors>
+        <default-interceptor-ref name="myInterceptor"/>
+
+        <action name="login" class="Login" method="login">
+            <result name="success" type="redirect">list</result>
+        </action>
+        <action name="list" class="Login" method="showList">
+            <result name="list">/WEB-INF/list.jsp</result>
+            <result name="login">login.jsp</result>
+        </action>
+    </package>
+</struts>

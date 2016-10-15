@@ -5,6 +5,7 @@
 
 <struts>
     <constant name="struts.multipart.maxSize" value="31457280" />
+    <constant name="struts.custom.i18n.resources" value="localization.constants"/>
     <!-- 二、总配置文件：引入其他所有配置文件 -->
     <package name="entity" namespace="/" extends="struts-default">
         <interceptors>

@@ -9,13 +9,13 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <html>
 <head>
-    <title>Login</title>
+    <title><s:text name="title"/></title>
 </head>
 <body>
 <h4><s:text name="login"/></h4>
 <s:form action="login">
     <s:textfield key="userName" />
-    <s:password name="password" label="password" required="true"/>
+    <s:password key="password" required="true"/>
     <s:submit />
 </s:form>
 </body>

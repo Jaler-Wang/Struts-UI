@@ -18,5 +18,6 @@
     <s:password key="password" required="true"/>
     <s:submit />
 </s:form>
+<s:debug/>
 </body>
 </html>
